@@ -231,7 +231,7 @@ Most Arm Cortex-M processors (except Cortex-M0/M0+/M23) include a `DWT->CYCCNT` 
 >
 > - The first program stop (typically at function `main`) is the initial reference time (zero point).
 > - `DWT->CYCCNT` is a 32-bit register incremented with [`SystemCoreClock`](https://arm-software.github.io/CMSIS_6/latest/Core/group__system__init__gr.html) frequency. The time calculation copes with one overflow between program stops. Multiple overflows between program stops deliver wrong time information.
-> - Each processor in a multi-processor system has and independent `DWT->CYCCNT` register.
+> - Each processor in a multi-processor system has an independent `DWT->CYCCNT` register.
 
 ### Multi-Core Debug
 
@@ -459,7 +459,7 @@ When starting a debug session, you might see this error:
 
 **Possible reason**: A running instance of pyOCD
 
-This error might occur if a previous debug session has ended prematuerly and pyOCD has not exited. The orphaned instance
+This error might occur if a previous debug session has ended prematurely and pyOCD has not exited. The orphaned instance
 will still keep the port open (usually 3333) and thus you won't be able to open the port again in the new session.
 
 **Solution**: Check open files and kill pyOCD
@@ -501,7 +501,7 @@ Related open source projects are:
 - The [Open-CMSIS-Pack](https://www.open-cmsis-pack.org/) project includes the CMSIS Debugger extension.
 - [Eclipse® CDT.cloud™](https://eclipse.dev/cdt-cloud/) hosts a number of components and
   best practices for building customizable web-based C/C++ tools.
-- [pyOCD](https://pyocd.io/), a Python based tool and API for debugging, programming, and exploring Arm Cortex®
+- [pyOCD](https://pyocd.io/), a Python-based tool and API for debugging, programming, and exploring Arm Cortex®
   microcontrollers.
 - [GDB](https://www.sourceware.org/gdb/), the debugger of the GNU Project.
 
